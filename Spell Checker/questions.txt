@@ -1,0 +1,53 @@
+0.  "an artificial long word said to mean a lung disease caused 
+    by inhaling very fine ash and sand dust" - Oxford English Dictionary
+    
+1.  returns resource usage measures for who, where who can be RUSAGE_SELF, 
+    RUSAGE_CHILDREN, or RUSAGE_THREAD
+    
+2.  there are 16 members in a variable of type struct rusage
+
+3.  we pass before and after by reference instead of value even though we
+    are not changing their values becuase passing a pointer to a function
+    or program is faster than making a copy of a value and then passing it
+    to the function; also, the function call requires the parameters be pointers
+    
+4.  The for loop uses fgetc to get the current char in the file and the main for 
+    loop runs until fgetc returns a EOF value. After it has gotton a char, it checks
+    if the char is in the alphabet using the function isalpha() or if it is a aprostaphe
+    to check if the char is a part of a word using an if condition. If the char is a part
+    of a word, then it adds the char to the word array where index is its paratemer. Once
+    it's added to the word array, the index is incremented by 1. Then, another if statement 
+    runs which asks if the length of the word (index) is bigger than LENGTH, which is a 
+    pre determined constant of 45 which is the longest an English word can be. If it is bigger,
+    than it runs through all the other characters of the word until it hits an EOF or a space
+    and rewrites the index to 0 for the next word. The next elseif statement after the check for 
+    the char in the alphabet or an apostraphie is to check if the char is a digit. If it is, then
+    it runs through all the other characters of the word until it hits an EOF or a space and rewrites
+    the index to 0, as done previously. Than, after checking that the character was in the alphabet,
+    an apostraphie, and/or not a digit, it checks if the index is greater than 0, which if true, would
+    mean that the for loop had found the end of a loop. If true, this condition adds a '\0' at the end 
+    of word to signifiy that the word was in fact a string, and then increments the # of words by 1.
+    Then, it checks if the word is mispelled by calling the check function which returns a true or false.
+    If it is mispelled, than the word is printed out and the # of mispelled words is incremented by 1. 
+    Then, the index is overwritten by 0 and the for loop starts again for the other characters in the file. 
+    
+5.  if we used fscanf, than we would have to know the length of the strings in the file beforehand, and that
+    would be impossible becuase the words in a piece of text are of varying length. We could try to make an 
+    array of length 45 to store all the characters of a word, but that would result in a lot of unused space
+    which would slow down the program tremendously
+    
+6.  declaring the parameters for check and load as consts means that neither program nor the user can change
+    the values of the parameters which is good because we are only reading the parameters and not manipulating 
+    them. If we were to write some bad code that manipulated the parameters, it would not be good for us because
+    we would be messing up all the text which would be hard to go back and correct
+
+7.  i used a trie to implement my spell-checker. Inside each of the nodes was a boolean value asking if a specific
+    node was a word and an array of 27 pointers to other nodes, 26 for letters and the 27th for the apostrophe 
+    
+8.  the total time it took the first time i got it working was 0.18
+
+9.  i did not make any changes becuase i was using a trie, so the only changes i could have made were in the checking
+    function, but the checking function was already taking minimal time so i decided to keep it that way
+    
+10. i feel if i had started with a hash table, it might have been more efficient than using a trie, but the trie 
+    is good becuase you can check very quickly

@@ -1,0 +1,53 @@
+0.  BMP - Varying number depending on # of bits; 32-bit BMP supports 4,294,967,296 colours
+    GIF - Supports 256 colours
+    JPEG - 16 Million
+    PNG - 24-bit PNG supports 16 million colours; 48-bit PNG supports 281 Trillion colours
+
+1.  GIF is the only format to support animation
+
+2.  Lossless compression results in a reduced file size of a perfect copy whereas lossy
+    compression results in a much smaller file size of a not perfect copy that may seem
+    to be a perfect copy
+    
+3.  JPEG is the only of these formats that are lossy-compressed
+
+4.  The system modifys the first character of the file to indicate that the file has been 
+    deleted. Then, the file  moves to a the hard drive's list of free clusters intact
+    
+5.  You can use one of the freely avaliable tools that make disk sanitization easy to wipe
+    your hard drive clean before you discard it
+    
+6.  stdint.h is a library that includes new types of ints with a fixed size 
+
+7.  Using uint8_t, uint32_t, int32_t, and uint16_t is to specify the number of bits that 
+    can be used to form an integer, keeping the value of an int between a specific minimum 
+    and maximum
+    
+8.  BYTE - 1 byte
+    DWORD - 4 bytes
+    LONG - 4 bytes
+    WORD - 2 bytes
+    
+9.  The first two bytes must be B and M.
+
+10. bfSize is the size of the entire bitmap file in bytes whereas biSize is the number of 
+    bytes required by the structure
+    
+11. If biHeight is negative, it means the bitmap is a top-down DIB and its origin is in the 
+    upper-left corner 
+    
+12. biBitCount
+
+13. fopen may return NULL if it can't find the file specified
+
+14. The third argument to fread is always 1 becuase the third argument to fread specifies the 
+    number of elements to be read, and since for all fread lines 1 arguments is read, which are 
+    structs, the third argument is always 1 
+    
+15. 3
+
+16. fseek changes the file position of the stream, which in this case is the inptr
+
+17. SEEK_CUR specifies that the offset should occur relative to the current position of the file
+
+18. Rick Astley
